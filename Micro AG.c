@@ -43,7 +43,7 @@ void forky(int mov[],int movTotal){
 	z = z * 2;
 	printf("\nmovimientos: %d tiempo: %d seg\n",mov[0],z);
 	
-	char *cmd[] = { "gzserver","--record","--record_path","prueba4.log","--record_encoding","txt","prueba4.world",(char *)0 };
+	char *cmd[] = { "gzserver","--record","--record_path","prueba4.log","--record_encoding","txt","test4.world",(char *)0 };
 
 	/* Identificador del proceso hijo */
 	pid_t idProceso;
@@ -60,7 +60,7 @@ void forky(int mov[],int movTotal){
 		exit(-1);
 	}
 	/* Camino que sigue el proceso hijo.
-	 * Pone trataSenal() para tratar la señal SIGUSR1 y se mete en un bucle
+	 * Pone trataSenal() para tratar la seÃ±al SIGUSR1 y se mete en un bucle
 	 * de espera
 	 */
 	if (idProceso == 0){
@@ -88,7 +88,7 @@ void forky(int mov[],int movTotal){
 }
 
 void trataSenal (int numeroSenhal){
-	printf ("Recibida señal del padre\n");
+	printf ("Recibida seÃ±al del padre\n");
 }
 
 void avanzar(double distancia,double x[],double y[],double z[],double roll[],double pitch[],double yaw[],float time[],int cont[],char aux[],char str[],float xpenal[],float ypenal[],int flag[]){ 
@@ -340,8 +340,8 @@ float FuncionAptitud(int tamCromosoma, int cromosoma[], int movimientos, float m
 	aptitud = penalizacion = pos = giro = grados = distancia = 0;
 	avance = 14;
 
-	strcat(Ruta, "prueba2.world");
-	strcat(RutaSal,"prueba4.world");
+	strcat(Ruta, "test2.world");
+	strcat(RutaSal,"test4.world");
 
 	//apertura de archivo de entrada
 	if((Archivo = fopen(Ruta, "r")) == NULL){perror(Ruta); exit (-1);}
@@ -727,7 +727,7 @@ void Suma(int gen, int hijo[],int x,int y){
 	}
 }
 
-/*Funcion que regula la poblacion, seleccionado los 2 cromosomas mas aptos y 3 aleatoriamente, regresando asi a su tamaño original*/
+/*Funcion que regula la poblacion, seleccionado los 2 cromosomas mas aptos y 3 aleatoriamente, regresando asi a su tamaÃ±o original*/
 void AutoRegulacion(int tamPoblacion,int tamPoblacionCruzada,int tamCromosoma,int poblacionCruzada[][144],int nuevaPoblacion[][144]){
 	int seguro,bandera,i,j,x,y,z,igualdad1,igualdad2,igualdad3,igualdad4;
 	//int x,y,z,j;

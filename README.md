@@ -8,6 +8,7 @@ The algorithm takes that file, adds a trajectory and saves it in the prueba4.wor
  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Implement other test scenarios.
+
 The world files can be modified to add more obstacles in future work, you can take the current obstacles as an example just change the pose (x,y,z)
 and size in x, y, z of the new obstacle respectively.
 

@@ -1,0 +1,275 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+   <world name="default">
+      <include>
+         <uri>model://ground_plane</uri>
+      </include>
+      <include>
+         <uri>model://sun</uri>
+      </include>
+      <actor name="laberinto">
+        <link name="pared1">
+          <visual name="visual">
+          <pose>-0.5 0 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 1.5 1</size>
+              </box>
+            </geometry>
+          </visual>
+	<collision name="collision">
+          <pose>-0.5 0 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 1.5 1</size>
+              </box>
+            </geometry>
+          </collision>
+        </link>
+	<link name="pared2">
+          <visual name="visual2">
+          <pose>2.5 0 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 1.5 1</size>
+              </box>
+            </geometry>
+          </visual>
+	<collision name="collision2">
+          <pose>2.5 0 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 1.5 1</size>
+              </box>
+            </geometry>
+          </collision>
+        </link>
+	<link name="pared3">
+          <visual name="visual3">
+          <pose>1 0.75 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>3 0.01 1</size>
+              </box>
+            </geometry>
+          </visual>
+	<collision name="collision3">
+          <pose>1 0.75 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>3 0.01 1</size>
+              </box>
+            </geometry>
+          </collision>
+        </link>
+	<link name="pared4">
+          <visual name="visual4">
+          <pose>1 -0.75 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>3 0.01 1</size>
+              </box>
+            </geometry>
+          </visual>
+	<collision name="collision4">
+          <pose>1 -0.75 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>3 0.01 1</size>
+              </box>
+            </geometry>
+          </collision>
+        </link>
+	<link name="obstaculo1">
+          <visual name="visual5">
+          <pose>0.5 -0.375 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 0.75 1</size>
+              </box>
+            </geometry>
+          </visual>
+	<collision name="collision5">
+          <pose>0.5 -0.375 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 0.75 1</size>
+              </box>
+            </geometry>
+          </collision>
+        </link>
+	<link name="obstaculo2">
+          <visual name="visual6">
+          <pose>1 0.375 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 0.75 1</size>
+              </box>
+            </geometry>
+          </visual>
+	<collision name="collision6">
+          <pose>1 0.375 0 0 0 0</pose>
+            <geometry>
+              <box>
+                <size>0.01 0.75 1</size>
+              </box>
+            </geometry>
+          </collision>
+        </link>
+      </actor>
+      <actor name="Tuktuk">
+        <link name="esfera_link">
+          <visual name="visual">
+          <pose>0 0 0.058 0 0 0</pose>
+            <geometry>
+              <sphere>
+                <radius>0.048</radius>
+              </sphere>
+            </geometry>
+          </visual>
+	  <collision name="c">
+          <pose>0 0 0.058 0 0 0</pose>
+            <geometry>
+              <sphere>
+                <radius>0.048</radius>
+              </sphere>
+            </geometry>
+          </collision>
+        </link>
+	<link name="trigger">
+          <visual name="visual">
+          <pose>-0.068 0 0.058 0 0 0</pose>
+            <geometry>
+	      <box>
+		<size>0.06 0.04 0.035</size>
+	      </box>
+            </geometry>
+          </visual>
+	   <collision name="c1">
+          <pose>-0.068 0 0.058 0 0 0</pose>
+            <geometry>
+	      <box>
+		<size>0.06 0.04 0.035</size>
+	      </box>
+            </geometry>
+          </collision>
+        </link>
+        <link name="left_wheel">
+          <visual name="visual">
+	    <pose>0 0.0515 0.058 0 1.5707 1.5707</pose>
+            <geometry>
+              <cylinder>
+                <radius>.058</radius>
+                <length>.043</length>
+              </cylinder>
+            </geometry>
+          </visual>
+	  <collision name="c2">
+	    <pose>0 0.0515 0.058 0 1.5707 1.5707</pose>
+            <geometry>
+              <cylinder>
+                <radius>.058</radius>
+                <length>.043</length>
+              </cylinder>
+            </geometry>
+          </collision>
+        </link>
+        <link name="right_wheel">
+          <visual name="visual">
+	    <pose>0 -0.0515 0.058 0 1.5707 1.5707</pose>
+            <geometry>
+              <cylinder>
+                <radius>.058</radius>
+                <length>.033</length>
+              </cylinder>
+            </geometry>
+          </visual>
+	  <collision name="c3">
+	    <pose>0 -0.0515 0.058 0 1.5707 1.5707</pose>
+            <geometry>
+              <cylinder>
+                <radius>.058</radius>
+                <length>.043</length>
+              </cylinder>
+            </geometry>
+          </collision>
+        </link>
+       <joint type="revolute" name="left_wheel_hinge">
+         <pose>0 0 -0.03 0 0 0</pose>
+         <child>left_wheel</child>
+         <parent>esfera_link</parent>
+         <axis>
+           <xyz>0 1 0</xyz>
+         </axis>
+       </joint>
+       <joint type="revolute" name="right_wheel_hinge">
+         <pose>0 0 0.03 0 0 0</pose>
+         <child>right_wheel</child>
+         <parent>esfera_link</parent>
+         <axis>
+           <xyz>0 1 0</xyz>
+         </axis>
+       </joint>
+       <script>
+          <loop>false</loop>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="circule">
+            <waypoint>
+              <time>0.0</time>
+              <pose>0 0 0 0 0 0</pose>
+            </waypoint>
+
+            <waypoint>
+              <time>0.75</time>
+              <pose>0.000 0.000 0 0 0 4.576</pose>
+            </waypoint>
+            <waypoint>
+              <time>1.50</time>
+              <pose>0.022 0.162 0 0 0 4.576</pose>
+            </waypoint>
+            <waypoint>
+              <time>2.25</time>
+              <pose>0.022 0.162 0 0 0 0.386</pose>
+            </waypoint>
+            <waypoint>
+              <time>3.00</time>
+              <pose>0.443 0.333 0 0 0 0.386</pose>
+            </waypoint>
+            <waypoint>
+              <time>3.75</time>
+              <pose>0.443 0.333 0 0 0 2.569</pose>
+            </waypoint>
+            <waypoint>
+              <time>4.50</time>
+              <pose>0.798 0.104 0 0 0 2.569</pose>
+            </waypoint>
+            <waypoint>
+              <time>5.25</time>
+              <pose>0.798 0.104 0 0 0 2.006</pose>
+            </waypoint>
+            <waypoint>
+              <time>6.00</time>
+              <pose>1.005 -0.341 0 0 0 2.006</pose>
+            </waypoint>
+            <waypoint>
+              <time>6.75</time>
+              <pose>1.005 -0.341 0 0 0 0.463</pose>
+            </waypoint>
+            <waypoint>
+              <time>7.50</time>
+              <pose>1.452 -0.118 0 0 0 0.463</pose>
+            </waypoint>
+            <waypoint>
+              <time>8.25</time>
+              <pose>1.452 -0.118 0 0 0 3.307</pose>
+            </waypoint>
+            <waypoint>
+              <time>9.00</time>
+              <pose>1.944 -0.036 0 0 0 3.307</pose>
+            </waypoint>
+          </trajectory>
+        </script>
+      </actor>
+   </world>
+</sdf>
+
